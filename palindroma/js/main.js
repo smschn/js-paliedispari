@@ -1,16 +1,19 @@
 /*
+
 Request:
 
 Palindroma
 
 Chiedere all’utente di inserire una parola.
 Creare una funzione per capire se la parola inserita è palindroma.
+
 */
 
 // create input to get the word
 const userInput = prompt('Please, enter a word: ');
+console.log('The chosen word is: ' + userInput);
 
-// create a variable to be used as a flag
+// create a variable to be used as a flag - assigned 'true' because of how the for loop is created
 let check = true;
 
 // create a variable to use the function with our argument userInput
@@ -21,7 +24,7 @@ function isPalindrome(argument) {
     for (let i = 0; i < argument.length; i++) {
         if (argument[i] != argument[argument.length-i-1]) {
             check = false;
-            i = argument.length;
+            i = argument.length; // to exit the for loop since the word will not be palindrome
         }
     }
     return check;
@@ -44,28 +47,35 @@ let check;
 
 const isWordPalindrome = isPalindrome(userInput);
 
-function test(prova99) {
+function isPalindrome(argument) {
 
-    for (let i = 0; i < prova99.length; i++) {
+    for (let i = 0; i < argument.length; i++) {
 
-        if (prova99[i] == prova99[prova99.length-i-1]) {
+        if (argument[i] == argument[argument.length-i-1]) {
+
             check = true;
-            i = prova99.length;
+
         } else if (userInput[i] != userInput[userInput.length-i-1]) {
+
             check = false;
+            i = argument.length; // to exit the for loop (the word will not be palindrome)
+
         }
-        console.log(prova1);//debug
 
     }
 
-    return prova1;
+    return check;
 
 }
 
 if (isWordPalindrome == true) {
+
     console.log('The chosen word is palindrome.');
+
 } else if (isWordPalindrome == false) {
+
     console.log('The chosen word is NOT palindrome.');
+
 }
 
 */
