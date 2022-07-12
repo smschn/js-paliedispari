@@ -10,6 +10,9 @@ Dichiariamo chi ha vinto.
 
 */
 
+// user choice
+const userChoice = prompt('Choose: odd or even?');
+
 // user input
 const userNumber = parseInt(prompt('Please, choose a number between 1 and 5.'));
 
@@ -36,12 +39,6 @@ if (userNumber < 1 || userNumber > 5 || isNaN(userNumber)) {
     const computerNumber = generateComputerNumber();
     console.log('The computer number is: ' + computerNumber);
 
-    /*
-    // debug - check if the code is working
-    console.log(userNumber);
-    console.log(computerNumber);
-    */
-    
     // create a variable to define the sum of the two numbers && show the sum in console
     const sum = userNumber + computerNumber;
     console.log('The sum of the two numbers is: ' + sum);
@@ -62,11 +59,18 @@ if (userNumber < 1 || userNumber > 5 || isNaN(userNumber)) {
     // create a variable to get the result from the oddEvenFunction function with the 'sum' argument
     const result = oddEvenFunction(sum);
 
-    // check on 'result'
+    // check on 'result' if sum if even or odd
     if (result == true) {
-        console.log('The sum of the two numbers is even')
+        console.log('The sum of the two numbers is: even');
     } else if (result == false) {
-        console.log('The sum of the two numbers is odd')
+        console.log('The sum of the two numbers is: odd');
+    }
+
+    // check the winner
+    if ((userChoice == 'even' && result == true) || (userChoice == 'odd' && result == false)) {
+        console.log('Human wins!');
+    } else if ((userChoice == 'even' && result == false) || (userChoice == 'odd' && result == true)) {
+        console.log('Computer wins!');
     }
 
 }
