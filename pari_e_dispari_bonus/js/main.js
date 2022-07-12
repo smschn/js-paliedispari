@@ -1,21 +1,33 @@
 /*
-
-Request:
-
-L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
-Sommiamo i due numeri.
-Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione).
-Dichiariamo chi ha vinto.
-
-*/
-
 // user choice
 const userChoice = prompt('Choose: odd or even?');
 
 // user input
 const userNumber = parseInt(prompt('Please, choose a number between 1 and 5.'));
 
+let min;
+let max;
+*/
+
+let minNum = 1;
+let maxNum = 5;
+
+/*
+let randomNumber1 = Math.floor(Math.random() * maxNum + minNum);
+console.log(randomNumber)
+ */
+
+function generateRandomNumber(numberMinimum, numberMaximum) {
+
+    const randomNumberFunction = Math.floor(Math.random() * (numberMaximum - numberMinimum + 1) + numberMinimum);
+    return randomNumberFunction;
+}
+
+const randomNumber = generateRandomNumber(minNum, maxNum);
+console.log(randomNumber);
+
+
+/*
 // check if the number chosen by the user is correct
 if (userNumber < 1 || userNumber > 5 || isNaN(userNumber)) {
 
@@ -30,8 +42,8 @@ if (userNumber < 1 || userNumber > 5 || isNaN(userNumber)) {
     console.log('The human number is: ' + userNumber);
 
     // create a function to generate a random number between 1 and 5
-    function generateComputerNumber() {
-        let randomNumber = Math.floor(Math.random() * 5 + 1);
+    function generateComputerNumber(minNum, maxNum) {
+        let randomNumber = Math.floor(Math.random() * maxNum + minNum);
         return randomNumber;
     }
 
@@ -74,3 +86,4 @@ if (userNumber < 1 || userNumber > 5 || isNaN(userNumber)) {
     }
 
 }
+*/
