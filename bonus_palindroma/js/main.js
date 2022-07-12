@@ -20,15 +20,24 @@ console.log(`All the letters are united to form a new word: ${userInputReversed}
 // create a variable to be flagged \ used inside the for loop
 let check;
 
-// create a for loop to compare the two words
-for (let i = 0; i < userInput.length; i++) {
-    if (userInput[i] == userInputReversed[i]) {
-        check = true;
-    } else if (userInput[i] != userInputReversed[i]) {
-        check = false;
-        i = userInput.length;
+// create a function that checks if the user-entered word is palindrome
+function isPalindrome(functionParameter) {
+
+    // create a for loop to compare the two words
+    for (let i = 0; i < functionParameter.length; i++) {
+        if (functionParameter[i] == userInputReversed[i]) {
+            check = true;
+        } else if (functionParameter[i] != userInputReversed[i]) {
+            check = false;
+            i = functionParameter.length;
+        }
     }
+
+    return check;
 }
+
+// create a variable to use the function with the userInput argument instead of the functionParameter parameter (which is a general rule)
+const isUserInputPalindrome = isPalindrome(userInput);
 
 // show the result with a conditional statement
 if (check == true) {
