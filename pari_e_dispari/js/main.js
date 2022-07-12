@@ -64,9 +64,9 @@ if (userNumber < 1 || userNumber > 5 || isNaN(userNumber)) {
 
     // check on 'result'
     if (result == true) {
-        console.log('il numero è pari')
+        console.log('The sum of the two numbers is even')
     } else if (result == false) {
-        console.log('il numero è dispari')
+        console.log('The sum of the two numbers is odd')
     }
 
 }
