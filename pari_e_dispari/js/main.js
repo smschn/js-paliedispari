@@ -1,5 +1,7 @@
 /*
 
+Request:
+
 L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
 Sommiamo i due numeri
@@ -8,36 +10,44 @@ Dichiariamo chi ha vinto.
 
 */
 
-const userNumber = prompt('Please, choose a number between 1 and 5');
+const userNumber = parseInt(prompt('Please, choose a number between 1 and 5.'));
 
-if (userNumber < 1 || userNumber > 5) {
+// check if the number chosen by the user is correct
+if (userNumber < 1 || userNumber > 5 || isNaN(userNumber)) {
 
-    alert('Errore: devi inserire un numero tra 1 e 5. Ricarica la pagina.')
+    alert('Error: you must choose a number between 1 and 5. Page will be reloaded.');
 
-    
+    // reload page
+    window.location.reload();
+
 } else {
 
-    const computerNumber = generateComputerNumber();
+    // show in the console the user number
+    console.log('The human number is: ' + userNumber);
 
-    // funzione per generare il numbero random per il pc
+    // create a function to generate a random number between 1 and 5
     function generateComputerNumber() {
         let randomNumber = Math.floor(Math.random() * 6 + 1);
-        console.log(randomNumber + ' funzione');
         return randomNumber;
     }
 
-    //debug
-    console.log(computerNumber + ' fuori funzione');
+    // create a variable to use the function && show the generated number in console
+    const computerNumber = generateComputerNumber();
+    console.log('The computer number is: ' + generateComputerNumber());
 
-    // somma
-    const sum = parseInt(userNumber) + parseInt(computerNumber);
-    console.log(sum + ' somma numeri');
+    // create a variable to define the sum of the two numbers && show the sum in console
+    console.log(userNumber);
+    console.log(computerNumber);
 
+    const sum = userNumber + computerNumber;
+    console.log('The sum of the two numbers is: ' + sum);
+
+    // create a variable to check if the sum is an odd or even number (it will be used in the next function)
     let isSumOdd;
 
-    // funzione pari o dispari
-    function oddEvenFunction(prova11) {
-        if (prova11 % 2 == 0) {
+    // create a function to calculate 
+    function oddEvenFunction(parametro) {
+        if (parametro % 2 == 0) {
             isSumOdd = true;
         } else {
             isSumOdd = false;
@@ -46,7 +56,7 @@ if (userNumber < 1 || userNumber > 5) {
     }
 
     // lego variabile a funzione che uso sulla variabile sum
-    let result = oddEvenFunction(sum);
+    const result = oddEvenFunction(sum);
 
     // condizione finale
     if (result == true) {

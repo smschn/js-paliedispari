@@ -1,27 +1,65 @@
-const userInput = prompt('Please, enter a word:');
+/*
+Request:
 
-//debug
-console.log(userInput[0])
-console.log(userInput[1])
-console.log(userInput[2])
-console.log(userInput[3])
+Palindroma
 
-let prova1;
+Chiedere all’utente di inserire una parola.
+Creare una funzione per capire se la parola inserita è palindroma.
+*/
 
-const isWordPalindrome = test();
+// create input to get the word
+const userInput = prompt('Please, enter a word: ');
 
-function test() {
-    for(let i = 0; i < userInput.length; i++) {
-        if (userInput[i] == userInput[userInput.length-i-1]) {
-            prova1 = true;
-            console.log(i); //debug
-            console.log(userInput[i]); //debug
+// create a variable to be used as a flag
+let check = true;
+
+// create a variable to use the function with our argument userInput
+const isWordPalindrome = isPalindrome(userInput);
+
+// create a function that checks if the word is palindrome and changes the flag if the condition is met
+function isPalindrome(argument) {
+    for (let i = 0; i < argument.length; i++) {
+        if (argument[i] != argument[argument.length-i-1]) {
+            check = false;
+            i = argument.length;
+        }
+    }
+    return check;
+}
+
+// check the flag value (true or false) and returns the corresponding message
+if (isWordPalindrome == true) {
+    console.log('The chosen word is palindrome.');
+} else if (isWordPalindrome == false) {
+    console.log('The chosen word is NOT palindrome.');
+}
+
+
+
+/*
+
+--- Metodo 2. per la funzione:
+
+let check;
+
+const isWordPalindrome = isPalindrome(userInput);
+
+function test(prova99) {
+
+    for (let i = 0; i < prova99.length; i++) {
+
+        if (prova99[i] == prova99[prova99.length-i-1]) {
+            check = true;
+            i = prova99.length;
         } else if (userInput[i] != userInput[userInput.length-i-1]) {
-            prova1 = false;
+            check = false;
         }
         console.log(prova1);//debug
+
     }
+
     return prova1;
+
 }
 
 if (isWordPalindrome == true) {
@@ -30,4 +68,4 @@ if (isWordPalindrome == true) {
     console.log('The chosen word is NOT palindrome.');
 }
 
-console.log(userInput.length);
+*/
