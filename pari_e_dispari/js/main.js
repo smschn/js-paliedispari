@@ -59,7 +59,7 @@ if (userNumber < 1 || userNumber > 5 || isNaN(userNumber)) {
     // create a variable to get the result from the oddEvenFunction function with the 'sum' argument
     const result = oddEvenFunction(sum);
 
-    // check on 'result' if sum if even or odd
+    // check on 'result' if sum is even or odd
     if (result == true) {
         console.log('The sum of the two numbers is: even');
     } else if (result == false) {
