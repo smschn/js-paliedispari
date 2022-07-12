@@ -16,7 +16,7 @@ function test() {
             prova1 = true;
             console.log(i); //debug
             console.log(userInput[i]); //debug
-        } else if (userInput[i] != userInput[userInput.length-i]) {
+        } else if (userInput[i] != userInput[userInput.length-i-1]) {
             prova1 = false;
         }
         console.log(prova1);//debug
