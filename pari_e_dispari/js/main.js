@@ -28,7 +28,7 @@ if (userNumber < 1 || userNumber > 5 || isNaN(userNumber)) {
 
     // create a function to generate a random number between 1 and 5
     function generateComputerNumber() {
-        let randomNumber = Math.floor(Math.random() * 6);
+        let randomNumber = Math.floor(Math.random() * 5 + 1);
         return randomNumber;
     }
 
