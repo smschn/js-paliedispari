@@ -20,17 +20,17 @@ if (userNumber < 1 || userNumber > 5 || isNaN(userNumber)) {
     // show in the console the user number
     console.log(`The human number is: ${userNumber}`);
 
-    // create variables for the computer minimum and maximum numbers
+    // create variables for the computer minimum and maximum numbers - to be used with the function
     let computerMinNum = 1;
     let computerMaxNum = 5;
 
-    // create function to generate a casual number between a maximum and a minimum
+    // create a function to generate a casual number between a maximum and a minimum
     function generateRandomNumber(numberMinimum, numberMaximum) {
         const randomNumberFunction = Math.floor(Math.random() * (numberMaximum - numberMinimum + 1) + numberMinimum);
         return randomNumberFunction;
     }
 
-    // generate random number for the computer
+    // generate a random number for the computer
     const computerRandomNumber = generateRandomNumber(computerMinNum, computerMaxNum);
     console.log(`The computer number is: ${computerRandomNumber}`);
 
