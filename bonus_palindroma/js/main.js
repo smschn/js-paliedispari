@@ -2,32 +2,37 @@
 const userInput = prompt('Please, enter a word: ');
 console.log('The chosen word is: ' + userInput);
 
+// separate each individual letter of the word, creating an array
+const userInputReversedSplitted = userInput.split('');
+console.log(userInputReversedSplitted);
+console.log(`An array containing every single letter of the word is created: ${userInputReversedSplitted}`);
 
+// reverse the order of the letters of the word == reverse the order of each element of the newly created array
+userInputReversedSplitted.reverse();
+console.log(userInputReversedSplitted);
+console.log(`The order of the array is reversed: ${userInputReversedSplitted}`);
 
-/*
+// the individual letters are united to form a new word
+let userInputReversed = userInputReversedSplitted.join('');
+console.log(userInputReversed);
+console.log(`All the letters are united to form a new word: ${userInputReversed}`);
 
-// create a variable to be used as a flag - assigned 'true' because of how the for loop is created
-let check = true;
+// create a variable to be flagged \ used inside the for loop
+let check;
 
-// create a variable to use the function with our argument userInput
-const isWordPalindrome = isPalindrome(userInput);
-
-// create a function that checks if the word is palindrome and changes the flag if the condition is met
-function isPalindrome(argument) {
-    for (let i = 0; i < argument.length; i++) {
-        if (argument[i] != argument[argument.length-i-1]) {
-            check = false;
-            i = argument.length; // to exit the for loop since the word will not be palindrome
-        }
+// create a for loop to compare the two words
+for (let i = 0; i < userInput.length; i++) {
+    if (userInput[i] == userInputReversed[i]) {
+        check = true;
+    } else if (userInput[i] != userInputReversed[i]) {
+        check = false;
+        i = userInput.length;
     }
-    return check;
 }
 
-// check the flag value (true or false) and returns the corresponding message
-if (isWordPalindrome == true) {
-    console.log('The chosen word is palindrome.');
-} else if (isWordPalindrome == false) {
-    console.log('The chosen word is NOT palindrome.');
+// show the result with a conditional statement
+if (check == true) {
+    console.log(`The word ${userInput} is palindrome`);
+} else {
+    console.log(`The word ${userInput} is NOT palindrome`);
 }
-
-*/
